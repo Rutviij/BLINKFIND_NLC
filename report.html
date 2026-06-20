@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+ <script>
+   window.API_BASE = "http://localhost:4000";
+  
+ </script>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report - BlinkFind</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Fraunces:ital,opsz,wght@0,9..144,100;0,9..144,300;0,9..144,400;1,9..144,300&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <style>
+   
+  </style>
+ </head>
+
+
+ <body>
+  
+<!-- NAV -->
+  <nav>
+    <a href="home.html" class="nav-logo">BlinkFind</a>
+    <input type="checkbox" id="menuToggle" class="menu-checkbox" aria-hidden="true">
+    <label for="menuToggle" class="hamburger" aria-label="Menu" aria-haspopup="true" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </label>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="claim.html">Claim</a></li>
+      <li><a href="report.html">Report</a></li>
+      <li><a href="admin.html">Admin</a></li>
+       <li><a href="contact.html">Contact</a></li>
+      <li><a href="index.html"><span>Logout</span></a></li>
+    </ul>
+    
+  </nav>
+
+
+
+<!-- MAIN CONTENT -->
+  <main class="page-container">
+    <div class="page-title">
+      <h1>Report a Item</h1>
+      <p>Help reunite lost items with their owners by providing details below</p>
+    </div>
+
+    <div class="form-container">
+      <div id="alertContainer"></div>
+      <form id="reportForm">
+        <div class="form-group">
+          <label for="itemName">Item Name *</label>
+          <input type="text" id="itemName" name="itemName" placeholder="e.g., Blue Water Bottle" required>
+        </div>
+
+        <div class="form-group">
+          <label for="category">Category *</label>
+          <select id="category" name="category" required>
+            <option value="">Select a category</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Books">Books & Stationery</option>
+            <option value="Accessories">Accessories</option>
+            <option value="Sports">Sports Equipment</option>
+            <option value="Personal">Personal Items</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="location">Where was it found? *</label>
+          <input type="text" id="location" name="location" placeholder="e.g., Library, Room 204" required>
+        </div>
+
+        <div class="form-group">
+          <label for="dateFound">Date Found *</label>
+          <input type="date" id="dateFound" name="dateFound" required>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description *</label>
+          <textarea id="description" name="description" placeholder="Provide a detailed description of the item including color, brand, distinguishing features, etc." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Photo (Optional)</label>
+          <div class="file-upload" id="fileUpload">
+            <input type="file" id="itemPhoto" name="itemPhoto" accept="image/*">
+           
+            <p>Click to upload or drag and drop</p>
+            <p style="font-size: 12px; margin-top: 5px; font-family: var(--font-mono);">PNG, JPG up to 5MB</p>
+          </div>
+          <img id="imagePreview" class="image-preview" alt="Preview">
+        </div>
+
+        <div class="form-group">
+          <label for="finderName">Your Name *</label>
+          <input type="text" id="finderName" name="finderName" placeholder="Your full name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="finderEmail">Your Email *</label>
+          <input type="email" id="finderEmail" name="finderEmail" placeholder="your.email@school.edu" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit Report</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">© 2026 PA FBLA All rights reserved.</div>
+    <div class="footer-logo">BlinkFind<span>.</span></div>
+    <div class="footer-right">Built by <span style="color:var(--accent)">Rutviij</span> Casula</div>
+  </footer>
+
+   <script src="supabase.js"></script>
+   <script src="report.js"></script>
+ </body>
+</html>
+
+
+
